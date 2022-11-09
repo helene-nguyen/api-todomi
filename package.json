@@ -53,11 +53,5 @@
     "supertest": "^6.3.1",
     "ts-jest": "^29.0.3",
     "typescript": "^4.8.4"
-  },
-  "jest": {
-    "forceExit": true,
-    "collectCoverage": false,
-    "verbose": true,
-    "detectOpenHandles": false
   }
 }
