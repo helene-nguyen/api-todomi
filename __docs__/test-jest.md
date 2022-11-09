@@ -34,6 +34,33 @@ export default {
 };
 ```
 
+## Write the test
+
+In test file :
+
+```js
+//~ Import modules
+import User from '../src/app/hexagon/use-cases/user/addUser';
+
+//& Add a user
+describe('Add a user', () => {
+  it('Should return hello', () => {
+    expect(User.getHello()).toBe('Hello');
+  });
+});
+```
+
+In app file :
+
+```js
+export default class User { 
+    static getHello = () => {
+        return "Hello";
+    }
+};
+```
+
+
 And then the test pass :
 
 ![test](./media/test.png)

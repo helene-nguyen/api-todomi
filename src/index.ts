@@ -5,6 +5,9 @@ import 'dotenv/config';
 import express, { Request, Response } from 'express';
 const app = express();
 
+import { ErrorApi } from './app/gateways/services/errorHandler';
+import { router } from './app/adapters/primary.driver/routes/index';
+
 //~ Import debug
 import debug from 'debug';
 const logger = debug('Entrypoint');
@@ -52,6 +55,14 @@ app.use(
     extended: false,
   })
 );
+
+//~ Router
+app.use(router);
+
+//~ Handle 404 error
+app.use((req, res) => {
+  throw new ErrorApi(`Page not found !`, req, res, 404);
+});
 
 //& Launch the server
 if (process.env.NODE_ENV !== 'test') {

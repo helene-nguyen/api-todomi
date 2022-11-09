@@ -24,10 +24,12 @@ Database
 ## Folder structure
 
 ```
-├── dist
-|  ├── index.js
-|  └── index.js.map
+|  └── __tests__
+|     ├── user.test.js
+|     └── user.test.js.map
+├── jest.config.js
 ├── logs
+├── package-lock.json
 ├── package.json
 ├── README.md
 ├── restClient.http
@@ -41,30 +43,36 @@ Database
 |  |  |     ├── database
 |  |  |     ├── repositories
 |  |  |     |  ├── data
-|  |  |     |  └── datamappers
+|  |  |     |  ├── datamappers
+|  |  |     |  └── userRepository.ts
 |  |  |     └── swagger
-|  |  ├── hexagon
-|  |  |  ├── gateways
-|  |  |  |  ├── middlewares
-|  |  |  |  ├── repositories
-|  |  |  |  |  ├── article
-|  |  |  |  |  ├── category
-|  |  |  |  |  └── user
-|  |  |  |  ├── schema
-|  |  |  |  ├── services
-|  |  |  |  └── utils
-|  |  |  ├── models
-|  |  |  |  ├── article
-|  |  |  |  ├── category
-|  |  |  |  └── user
-|  |  |  └── use-cases
-|  |  |     ├── article
-|  |  |     ├── category
-|  |  |     └── user
-|  |  └── Types
-|  ├── index.ts
-|  └── __test__
-└── tsconfig.json
+|  |  ├── gateways
+|  |  |  ├── middlewares
+|  |  |  ├── schema
+|  |  |  ├── services
+|  |  |  |  ├── errorHandler.ts
+|  |  |  |  └── errorLoggerHandler.ts
+|  |  |  └── utils
+|  |  |     └── formattedDate.ts
+|  |  ├── models
+|  |  |  └── userModel.ts
+|  |  ├── Types
+|  |  |  ├── custom.ts
+|  |  |  ├── express
+|  |  |  |  └── index.d.ts
+|  |  |  └── repositories
+|  |  |     ├── articleRepository.ts
+|  |  |     ├── categoryRepository.ts
+|  |  |     └── userRepository.ts
+|  |  └── use-cases
+|  └── index.ts
+├── tsconfig.json
+├── __docs__
+|  ├── media
+|  |  └── test.png
+|  └── test-jest.md
+└── __tests__
+   └── user.test.ts
 ```
 
 ## Steps
