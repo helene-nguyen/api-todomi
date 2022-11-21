@@ -1,0 +1,8 @@
+@entryPoint = http://localhost:4110/api/v1
+
+###
+GET {{entryPoint}}
+
+###
+GET {{entryPoint}}/articles
+Content-Type: application/json

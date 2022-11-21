@@ -6,9 +6,9 @@
   "main": "dist/index.js",
   "scripts": {
     "start": "node dist/index.js",
-    "dev:build_🏡": "tsc -w",
-    "dev:run_🚀": "nodemon dist/index.js",
-    "dev:lint_💥": "eslint . --ext .ts",
+    "dev:build": "tsc -w",
+    "dev:run": "nodemon dist/index.js",
+    "dev:lint": "eslint . --ext .ts",
     "dev": "concurrently \"npm:dev:*\" -c green.bold,yellow.bold,blue.bold",
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --watchAll"
   },

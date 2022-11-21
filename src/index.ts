@@ -1,16 +1,16 @@
 //~ Import dotenv
 import 'dotenv/config';
 
-//~ Improt modules
-import express, { Request, Response } from 'express';
-const app = express();
-
-import { ErrorApi } from './app/gateways/services/errorHandler';
-import { router } from './app/adapters/primary.driver/routes/index';
-
 //~ Import debug
 import debug from 'debug';
 const logger = debug('Entrypoint');
+
+//~ Import modules
+import express, { Request, Response } from 'express';
+const app = express();
+
+import { ErrorApi } from './app/core/gateways/services/errorHandler.js';
+import { router } from './app/adapters/primary.driver/routes/index.js';
 
 //~ Protect API Helmet
 import helmet from 'helmet';
@@ -52,7 +52,7 @@ app.use(express.json());
 // accept Content-type: application/x-www-form-urlencoded
 app.use(
   express.urlencoded({
-    extended: false,
+    extended: true,
   })
 );
 

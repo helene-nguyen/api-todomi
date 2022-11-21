@@ -1,8 +1,10 @@
 import 'dotenv/config';
-import express from 'express';
-const app = express();
 import debug from 'debug';
 const logger = debug('Entrypoint');
+import express from 'express';
+const app = express();
+import { ErrorApi } from './app/core/gateways/services/errorHandler.js';
+import { router } from './app/adapters/primary.driver/routes/index.js';
 import helmet from 'helmet';
 app.use(helmet());
 app.use((req, res, next) => {
@@ -27,8 +29,12 @@ app.use(session({
 }));
 app.use(express.json());
 app.use(express.urlencoded({
-    extended: false,
+    extended: true,
 }));
+app.use(router);
+app.use((req, res) => {
+    throw new ErrorApi(`Page not found !`, req, res, 404);
+});
 if (process.env.NODE_ENV !== 'test') {
     const PORT = process.env.PORT ?? 3000;
     app.listen(PORT, () => {
