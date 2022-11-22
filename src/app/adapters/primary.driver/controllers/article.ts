@@ -8,6 +8,7 @@ class ArticleController extends CoreController {
   read: any = ReadArticle;
   item: any = new ArticleRepo();
   model: any = new ArticleModel();
+  element: string = 'articleId';
 }
 
 const Article = new ArticleController();

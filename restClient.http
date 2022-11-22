@@ -6,3 +6,8 @@ GET {{entryPoint}}
 ###
 GET {{entryPoint}}/articles
 Content-Type: application/json
+
+###
+
+GET {{entryPoint}}/articles/4
+Content-Type: application/json

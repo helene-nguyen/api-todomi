@@ -8,7 +8,7 @@ class ErrorApi extends Error {
     res.status(statusCode).json({ message: message });
 
     //~ Log errors
-    errorLoggerHandling(message, req, res);
+    errorLoggerHandling(message, req);
   }
 }
 

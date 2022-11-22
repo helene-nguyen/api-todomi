@@ -7,6 +7,10 @@ class ArticleRepo {
         const result = await this.article.selectAll();
         return result;
     };
+    selectOne = async (id) => {
+        const result = await this.article.selectOne(id);
+        return result;
+    };
 }
 export default ArticleRepo;
 //# sourceMappingURL=article.js.map

@@ -6,6 +6,7 @@ class ArticleController extends CoreController {
     read = ReadArticle;
     item = new ArticleRepo();
     model = new ArticleModel();
+    element = 'articleId';
 }
 const Article = new ArticleController();
 export default Article;

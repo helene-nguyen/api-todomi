@@ -11,6 +11,12 @@ class ArticleRepo implements ArticleRepository {
 
     return result;
   };
+
+  selectOne = async (id : number): Promise<string[] | undefined> => { 
+    const result = await this.article.selectOne(id);
+
+    return result;
+  }
 }
 
 export default ArticleRepo;

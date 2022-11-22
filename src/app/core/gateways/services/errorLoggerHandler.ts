@@ -14,7 +14,7 @@ const logger = debug('ErrorHandling');
 /**
  * Manage error
  */
-function errorLoggerHandling(message: string, req: Request, res: Response) {
+function errorLoggerHandling(message: string, req: Request) {
   const actualDate = new Date();
 
   // format error message : Date + url + message
