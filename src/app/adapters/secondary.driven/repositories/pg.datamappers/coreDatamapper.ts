@@ -1,4 +1,6 @@
+//~import modules
 import pg from 'pg';
+
 
 interface CoreDataMapper {
   client: object;
@@ -7,11 +9,10 @@ interface CoreDataMapper {
 }
 
 class CoreDataMapper {
+
   constructor(client: object) {
     this.client = client;
   }
-
-  //* METHODS
 
   async selectAll() {
     if (this.client instanceof pg.Pool) {

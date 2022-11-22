@@ -4,7 +4,6 @@ import ArticleModel from '../../models/articleModel.js';
 class ReadArticle {
   articleModel: any = new ArticleModel();
   
-
   //access to article repository properties
   constructor(private articleRepository: ArticleRepository) {}
 

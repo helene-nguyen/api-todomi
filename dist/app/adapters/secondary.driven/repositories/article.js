@@ -1,14 +1,14 @@
 import ArticleModel from '../../../core/models/articleModel.js';
-import { Article } from './datamappers/article.js';
+import { ArticlePg } from './pg.datamappers/article.js';
 class ArticleRepo {
-    article = Article;
+    articlePg = ArticlePg;
     model = new ArticleModel();
     selectAll = async () => {
-        const result = await this.article.selectAll();
+        const result = await this.articlePg.selectAll();
         return result;
     };
     selectOne = async (id) => {
-        const result = await this.article.selectOne(id);
+        const result = await this.articlePg.selectOne(id);
         return result;
     };
 }

@@ -1,10 +1,9 @@
-import client from '../../database/mongodb.js';
+import client from '../../database/postgresql.js';
 import { CoreDataMapper } from './coreDataMapper.js';
 class ArticleDataMapper extends CoreDataMapper {
     tableName = 'article';
     columns = `"id", "content"`;
-    collectionName = 'article';
 }
-const Article = new ArticleDataMapper(client);
-export { Article };
+const ArticlePg = new ArticleDataMapper(client);
+export { ArticlePg };
 //# sourceMappingURL=article.js.map

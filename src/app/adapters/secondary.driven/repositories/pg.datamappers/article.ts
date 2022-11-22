@@ -1,4 +1,4 @@
-import client from '../../database/database.js';
+import client from '../../database/postgresql.js';
 import { CoreDataMapper } from './coreDataMapper.js';
 
 
@@ -7,6 +7,6 @@ class ArticleDataMapper extends CoreDataMapper  {
   columns = `"id", "content"`;
 }
 
-const Article = new ArticleDataMapper(client);
+const ArticlePg = new ArticleDataMapper(client);
 
-export { Article };
+export { ArticlePg };
