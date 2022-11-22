@@ -59,6 +59,27 @@ Database
 |  |  |     |     ├── coreDatamapper.ts
 |  |  |     |     └── user.ts
 |  |  |     └── swagger
+|  |  ├── core
+|  |  |  ├── gateways
+|  |  |  |  ├── middlewares
+|  |  |  |  ├── repositories
+|  |  |  |  |  ├── articleRepository.ts
+|  |  |  |  |  ├── categoryRepository.ts
+|  |  |  |  |  └── userRepository.ts
+|  |  |  |  ├── schema
+|  |  |  |  ├── services
+|  |  |  |  |  ├── errorHandler.ts
+|  |  |  |  |  └── errorLoggerHandler.ts
+|  |  |  |  └── utils
+|  |  |  |     └── formattedDate.ts
+|  |  |  ├── models
+|  |  |  |  ├── articleModel.ts
+|  |  |  |  └── coreModel.ts
+|  |  |  └── use-cases
+|  |  |     └── article
+|  |  |        ├── create.ts
+|  |  |        └── read.ts
+|  |  └── Types
 |  |     ├── custom.ts
 |  |     └── express
 |  |        └── index.d.ts
