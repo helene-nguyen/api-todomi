@@ -14,4 +14,4 @@ class CoreDataMapper {
     }
 }
 export { CoreDataMapper };
-//# sourceMappingURL=coreDatamapper.js.map
+//# sourceMappingURL=coreDataMapper.js.map

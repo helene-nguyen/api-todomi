@@ -24,11 +24,10 @@ Database
 ## Folder structure
 
 ```
-|  └── __tests__
-|     ├── user.test.js
-|     └── user.test.js.map
-├── jest.config.js
 ├── logs
+|  ├── 2022-11-21.log
+|  ├── 2022-11-22.log
+|  └── 2022-11-9.log
 ├── package-lock.json
 ├── package.json
 ├── README.md
@@ -38,41 +37,39 @@ Database
 |  |  ├── adapters
 |  |  |  ├── primary.driver
 |  |  |  |  ├── controllers
+|  |  |  |  |  ├── article.ts
+|  |  |  |  |  ├── coreController.ts
+|  |  |  |  |  └── main.ts
 |  |  |  |  └── routes
+|  |  |  |     ├── article.ts
+|  |  |  |     ├── index.ts
+|  |  |  |     └── main.ts
 |  |  |  └── secondary.driven
 |  |  |     ├── database
+|  |  |     |  ├── mongodb.ts
+|  |  |     |  └── postgresql.ts
 |  |  |     ├── repositories
+|  |  |     |  ├── article.ts
 |  |  |     |  ├── data
-|  |  |     |  ├── datamappers
-|  |  |     |  └── userRepository.ts
+|  |  |     |  ├── mongo.datamappers
+|  |  |     |  |  ├── article.ts
+|  |  |     |  |  └── coreDatamapper.ts
+|  |  |     |  └── pg.datamappers
+|  |  |     |     ├── article.ts
+|  |  |     |     ├── coreDatamapper.ts
+|  |  |     |     └── user.ts
 |  |  |     └── swagger
-|  |  ├── gateways
-|  |  |  ├── middlewares
-|  |  |  ├── schema
-|  |  |  ├── services
-|  |  |  |  ├── errorHandler.ts
-|  |  |  |  └── errorLoggerHandler.ts
-|  |  |  └── utils
-|  |  |     └── formattedDate.ts
-|  |  ├── models
-|  |  |  └── userModel.ts
-|  |  ├── Types
-|  |  |  ├── custom.ts
-|  |  |  ├── express
-|  |  |  |  └── index.d.ts
-|  |  |  └── repositories
-|  |  |     ├── articleRepository.ts
-|  |  |     ├── categoryRepository.ts
-|  |  |     └── userRepository.ts
-|  |  └── use-cases
-|  └── index.ts
+|  |     ├── custom.ts
+|  |     └── express
+|  |        └── index.d.ts
+|  ├── index.ts
+|  └── __tests__
+|     └── user.test.ts
 ├── tsconfig.json
-├── __docs__
-|  ├── media
-|  |  └── test.png
-|  └── test-jest.md
-└── __tests__
-   └── user.test.ts
+└── __docs__
+   ├── media
+   |  └── test.png
+   └── test-jest.md
 ```
 
 ## Steps
