@@ -8,7 +8,7 @@ POST {{entryPoint}}/articles
 Content-Type: application/json
 
 {
-  "content": "created !"
+  "content": "task created !"
 }
 
 ###
@@ -16,11 +16,11 @@ GET {{entryPoint}}/articles
 Content-Type: application/json
 
 ###
-GET {{entryPoint}}/articles/12
+GET {{entryPoint}}/articles/40
 Content-Type: application/json
 
 ###
-PATCH {{entryPoint}}/articles/3
+PATCH {{entryPoint}}/articles/40
 Content-Type: application/json
 
 {
@@ -29,5 +29,5 @@ Content-Type: application/json
 }
 
 ###
-DELETE {{entryPoint}}/articles/39ijnji
+DELETE {{entryPoint}}/articles/40
 Content-Type: application/json

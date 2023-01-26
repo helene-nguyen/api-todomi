@@ -20,14 +20,11 @@ Database
 - PostgreSQL
 - pgAdmin4 (GUI)
 - Sqitch versioning
+- MongoDB for testing adapter)
 
 ## Folder structure
 
 ```
-├── logs
-|  ├── 2022-11-21.log
-|  ├── 2022-11-22.log
-|  └── 2022-11-9.log
 ├── package-lock.json
 ├── package.json
 ├── README.md
@@ -49,23 +46,21 @@ Database
 |  |  |     |  ├── mongodb.ts
 |  |  |     |  └── postgresql.ts
 |  |  |     ├── repositories
-|  |  |     |  ├── article.ts
+|  |  |     |  ├── articleRepository.ts
 |  |  |     |  ├── data
+|  |  |     |  |  └── migration.sql
 |  |  |     |  ├── mongo.datamappers
 |  |  |     |  |  ├── article.ts
 |  |  |     |  |  └── coreDatamapper.ts
 |  |  |     |  └── pg.datamappers
 |  |  |     |     ├── article.ts
-|  |  |     |     ├── coreDatamapper.ts
-|  |  |     |     └── user.ts
+|  |  |     |     └── coreDatamapper.ts
 |  |  |     └── swagger
 |  |  ├── core
 |  |  |  ├── gateways
+|  |  |  |  ├── interfaces
+|  |  |  |  |  └── articleInterface.ts
 |  |  |  |  ├── middlewares
-|  |  |  |  ├── repositories
-|  |  |  |  |  ├── articleRepository.ts
-|  |  |  |  |  ├── categoryRepository.ts
-|  |  |  |  |  └── userRepository.ts
 |  |  |  |  ├── schema
 |  |  |  |  ├── services
 |  |  |  |  |  ├── errorHandler.ts
@@ -76,16 +71,14 @@ Database
 |  |  |  |  ├── articleModel.ts
 |  |  |  |  └── coreModel.ts
 |  |  |  └── use-cases
-|  |  |     └── article
-|  |  |        ├── create.ts
-|  |  |        └── read.ts
+|  |  |     └── articleCRUD.ts
 |  |  └── Types
 |  |     ├── custom.ts
 |  |     └── express
 |  |        └── index.d.ts
 |  ├── index.ts
 |  └── __tests__
-|     └── user.test.ts
+|     └── article.test.ts
 ├── tsconfig.json
 └── __docs__
    ├── media
@@ -122,3 +115,6 @@ npm run dev
 ---
 
 ### Sources
+
+- Training [Wealcome](https://wealcomecompany.com/) with [Michaël Azerhad](https://www.linkedin.com/in/%E2%9A%A1%EF%B8%8Fmicha%C3%ABl-azerhad-9058a044/)
+- Thanks to [Alistair Cockburn](https://github.com/totheralistair/SmallerWebHexagon) for taking time to help me and let me redraw the diagram :)

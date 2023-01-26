@@ -66,8 +66,10 @@ export default class CoreController {
   delete = async (req: Request, res: Response) => {
     try {
       const id: number = +req.params[this.paramsName];
-      await new this.method(this.item).deleteOne(req, res, id);
-      
+      const isDeleted = await new this.method(this.item).deleteOne(req, res, id);
+
+      if (!isDeleted) throw new ErrorApi(`Given informations not allows any modification`, req, res, 403);
+
       return res.status(200).json('Content successfully deleted');
     } catch (err) {
       if (err instanceof Error) logger(err.message);
