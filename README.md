@@ -27,10 +27,9 @@ Back-end
 
 Database
 
-- PostgreSQL
+- PostgreSQL deployed in a Docker container (in a VM)
 - pgAdmin4 (GUI)
-- Sqitch versioning
-- MongoDB for testing adapter)
+- MongoDB for testing adapter on host
 
 ## Hexagonale architecture or Ports and Adapters Architecture (Alistair Cockburn)
 
