@@ -1,12 +1,10 @@
 import CoreController from './coreController.js';
-import ReadArticle from '../../../core/use-cases/article/read.js';
-import ArticleRepo from '../../secondary.driven/repositories/article.js';
-import ArticleModel from '../../../core/models/articleModel.js';
+import ArticleCRUD from '../../../core/use-cases/articleCRUD.js';
+import ArticleRepository from '../../secondary.driven/repositories/articleRepository.js';
 class ArticleController extends CoreController {
-    read = ReadArticle;
-    item = new ArticleRepo();
-    model = new ArticleModel();
-    element = 'articleId';
+    method = ArticleCRUD;
+    item = new ArticleRepository();
+    paramsName = 'articleId';
 }
 const Article = new ArticleController();
 export default Article;

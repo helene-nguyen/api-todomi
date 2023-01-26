@@ -4,10 +4,30 @@
 GET {{entryPoint}}
 
 ###
+POST {{entryPoint}}/articles
+Content-Type: application/json
+
+{
+  "content": "created !"
+}
+
+###
 GET {{entryPoint}}/articles
 Content-Type: application/json
 
 ###
+GET {{entryPoint}}/articles/12
+Content-Type: application/json
 
-GET {{entryPoint}}/articles/4
+###
+PATCH {{entryPoint}}/articles/3
+Content-Type: application/json
+
+{
+  "content": "task updateeeeeed !",
+  "is_done": true
+}
+
+###
+DELETE {{entryPoint}}/articles/39ijnji
 Content-Type: application/json

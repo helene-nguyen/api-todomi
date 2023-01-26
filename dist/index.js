@@ -5,6 +5,10 @@ import express from 'express';
 const app = express();
 import { ErrorApi } from './app/core/gateways/services/errorHandler.js';
 import { router } from './app/adapters/primary.driver/routes/index.js';
+app.use(express.json());
+app.use(express.urlencoded({
+    extended: true,
+}));
 import helmet from 'helmet';
 app.use(helmet());
 app.use((req, res, next) => {
@@ -26,10 +30,6 @@ app.use(session({
         sameSite: 'lax',
         maxAge: 24 * 60 * 60 * 1000,
     },
-}));
-app.use(express.json());
-app.use(express.urlencoded({
-    extended: true,
 }));
 app.use(router);
 app.use((req, res) => {

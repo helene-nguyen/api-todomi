@@ -15,4 +15,4 @@ class ArticleCRUD {
     };
 }
 export default ArticleCRUD;
-//# sourceMappingURL=read.js.map
+//# sourceMappingURL=articleCRUD.js.map

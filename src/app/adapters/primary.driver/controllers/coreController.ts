@@ -1,22 +1,34 @@
 //~ Import modules
 import { Request, Response } from 'express';
+//~ Import modules
 import debug from 'debug';
+import { ErrorApi } from '../../../core/gateways/services/errorHandler.js';
 const logger = debug('Controller');
 
 export default class CoreController {
+  //~ Crud use cases
+  method: any;
   //* Properties
-  element: any;
   item: any;
-  model: any;
-  //~ Crud
-  read: any;
+  paramsName: any;
 
   //* Methods
-  create = async (req: Request, res: Response) => {};
+  create = async (req: Request, res: Response) => {
+    try {
+      const bodyData = req.body;
+      const isCreated = await new this.method(this.item).createOne(req, res, bodyData);
+
+      if (!isCreated) throw new ErrorApi(`Given informations not allows any modification`, req, res, 403);
+
+      return res.status(201).json('Content successfully inserted');
+    } catch (err) {
+      if (err instanceof Error) logger(err.message);
+    }
+  };
 
   findAll = async (req: Request, res: Response) => {
     try {
-      const result = await new this.read(this.item).displayAll(req, res);
+      const result = await new this.method(this.item).displayAll(req, res);
 
       return res.status(200).json(result);
     } catch (err) {
@@ -26,9 +38,9 @@ export default class CoreController {
 
   findOne = async (req: Request, res: Response) => {
     try {
-      const id: number = +req.params[this.element];
+      const id: number = +req.params[this.paramsName];
 
-      const result = await new this.read(this.item).displayOne(req, res, id);
+      const result = await new this.method(this.item).displayOne(req, res, id);
 
       return res.status(200).json(result);
     } catch (err) {
@@ -36,6 +48,29 @@ export default class CoreController {
     }
   };
 
-  update = async (req: Request, res: Response) => {};
-  delete = async (req: Request, res: Response) => {};
+  update = async (req: Request, res: Response) => {
+    try {
+      const id: number = +req.params[this.paramsName];
+      const bodyData = { id, ...req.body };
+
+      const isUpdated = await new this.method(this.item).updateOne(req, res, bodyData);
+
+      if (!isUpdated) throw new ErrorApi(`Given informations not allows any modification`, req, res, 403);
+
+      return res.status(200).json('Content successfully updated');
+    } catch (err) {
+      if (err instanceof Error) logger(err.message);
+    }
+  };
+
+  delete = async (req: Request, res: Response) => {
+    try {
+      const id: number = +req.params[this.paramsName];
+      await new this.method(this.item).deleteOne(req, res, id);
+      
+      return res.status(200).json('Content successfully deleted');
+    } catch (err) {
+      if (err instanceof Error) logger(err.message);
+    }
+  };
 }

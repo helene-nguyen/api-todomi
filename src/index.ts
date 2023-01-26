@@ -12,6 +12,16 @@ const app = express();
 import { ErrorApi } from './app/core/gateways/services/errorHandler.js';
 import { router } from './app/adapters/primary.driver/routes/index.js';
 
+//~ Encoding parsing the body
+//accept Content-type: application/json
+app.use(express.json());
+// accept Content-type: application/x-www-form-urlencoded
+app.use(
+  express.urlencoded({
+    extended: true,
+  })
+);
+
 //~ Protect API Helmet
 import helmet from 'helmet';
 app.use(helmet());
@@ -46,15 +56,6 @@ app.use(
   })
 );
 
-//~ Encoding parsing the body
-//accept Content-type: application/json
-app.use(express.json());
-// accept Content-type: application/x-www-form-urlencoded
-app.use(
-  express.urlencoded({
-    extended: true,
-  })
-);
 
 //~ Router
 app.use(router);
