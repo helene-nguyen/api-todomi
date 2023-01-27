@@ -22,7 +22,7 @@ class ArticleCRUD {
     return await this.articleInterface.insert(data);
   };
 
-  displayAll = async (req: Request, res: Response): Promise<string[]> => {
+  fetchAll = async (req: Request, res: Response): Promise<string[]> => {
     const result = await this.articleInterface.selectAll();
 
     // before sending results, control first
@@ -31,7 +31,7 @@ class ArticleCRUD {
     return articles;
   };
 
-  displayOne = async (req: Request, res: Response, articleId: number): Promise<string[]> => {
+  fetchOne = async (req: Request, res: Response, articleId: number): Promise<string[]> => {
     const result = await this.articleInterface.selectOne(articleId);
 
     return await this.articleModel.controlItem(req, res, result);

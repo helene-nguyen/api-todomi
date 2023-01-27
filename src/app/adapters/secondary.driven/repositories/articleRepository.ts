@@ -12,7 +12,7 @@ class ArticleRepository implements ArticleInterface {
     return await this.articlePg.insert(bodyData);
   };
 
-  selectAll = async (): Promise<any[] | undefined> => {
+  selectAll = async (): Promise<string[] | undefined> => {
     return await this.articlePg.selectAll();
   };
 

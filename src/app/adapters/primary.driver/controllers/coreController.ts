@@ -28,7 +28,7 @@ export default class CoreController {
 
   findAll = async (req: Request, res: Response) => {
     try {
-      const result = await new this.method(this.item).displayAll(req, res);
+      const result = await new this.method(this.item).fetchAll(req, res);
 
       return res.status(200).json(result);
     } catch (err) {
@@ -40,7 +40,7 @@ export default class CoreController {
     try {
       const id: number = +req.params[this.paramsName];
 
-      const result = await new this.method(this.item).displayOne(req, res, id);
+      const result = await new this.method(this.item).fetchOne(req, res, id);
 
       return res.status(200).json(result);
     } catch (err) {
