@@ -133,6 +133,10 @@ DROP DATABASE taskedo;
 
 CREATE DATABASE taskedo;
 
+--=======================================================
+-- CONNECTO DB taskedo before launching these commands
+--=======================================================
+
 CREATE TABLE article (
     "id" INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     "content" TEXT NOT NULL,

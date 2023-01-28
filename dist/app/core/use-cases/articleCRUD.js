@@ -9,12 +9,12 @@ class ArticleCRUD {
         const data = await this.articleModel.controlInsertion(req, res, bodyData);
         return await this.articleInterface.insert(data);
     };
-    displayAll = async (req, res) => {
+    fetchAll = async (req, res) => {
         const result = await this.articleInterface.selectAll();
         const articles = await this.articleModel.controlItem(req, res, result);
         return articles;
     };
-    displayOne = async (req, res, articleId) => {
+    fetchOne = async (req, res, articleId) => {
         const result = await this.articleInterface.selectOne(articleId);
         return await this.articleModel.controlItem(req, res, result);
     };
